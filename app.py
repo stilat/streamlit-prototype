@@ -15,7 +15,7 @@ def convert_df_to_csv(df):
     return df.to_csv(index=True).encode('utf-8')
 
 # Streamlit app layout
-st.title("Multi-Case Visualization")
+st.title("Visualization of Polynomial Time Series")
 num_cases = st.sidebar.number_input("Number of Cases", min_value=1, value=3, step=1)
 
 # Collecting data for each case

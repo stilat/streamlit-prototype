@@ -11,12 +11,12 @@ def generate_polynomial_data(start_date, end_date, coeffs):
     y = np.polyval(coeffs, x)
     return pd.Series(y, index=dates)
 
-st.title("Dynamic Multi-Case Visualization")
+st.title("Multi-Case Visualization")
 num_cases = st.sidebar.number_input("Number of Cases", min_value=1, value=3, step=1)
 
 # Collecting data for each case
 for i in range(num_cases):
-    with st.sidebar.expander(f"Case {i+1} Parameters", expanded=True):
+    with st.sidebar.expander(f"Case {i+1} ", expanded=True):
         # Date inputs for each case
         start_date = st.date_input(f"Start Date for Case {i+1}", pd.to_datetime("2023-01-01"), key=f'start_date_{i}')
         end_date = st.date_input(f"End Date for Case {i+1}", pd.to_datetime("2023-12-31"), key=f'end_date_{i}')
